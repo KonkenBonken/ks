@@ -1,3 +1,5 @@
+from parsers import varparser
+
 varnames = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 variables = dict()
 
@@ -8,15 +10,8 @@ def Let(line: str):
     value = line[3:]
 
     assert varname in varnames
+    variables[varname] = varparser(datatype, value)
 
-    if datatype == 'β':
-        assert value in {'0', '1'}
-        variables[varname] = True if value == '1' else False
-    elif datatype == 'Ε':
-        variables[varname] = int(value)
-    elif datatype == 'ε':
-        variables[varname] = float(value)
-        
 
 def Vardump(_):
     print(variables)
