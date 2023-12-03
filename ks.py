@@ -11,6 +11,8 @@ file.close()
 for line in code.replace('⋮', '\n').split('\n'):
     if len(line) == 0:
         continue
+    if line[0] == ' ':
+        continue
 
     assert line[0] in commandset
 
