@@ -6,7 +6,7 @@ file = open(file_name, "r", encoding="utf8")
 code = file.read()
 file.close()
 
-for line in code.split('\n'):
+for line in code.replace('⋮', '\n').split('\n'):
     if len(line) == 0:
         continue
     command = commands.get(line[0])
