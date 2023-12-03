@@ -40,3 +40,5 @@
 
 - \+ - Plus
 - \- - Minus
+- × - Multiply
+- ÷ - Divide

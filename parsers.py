@@ -21,10 +21,23 @@ def expressionparser(expr: str):
     if expr in varnames:
         return variables[expr]
 
-    if any(op in expr for op in binaryoperators):
+    if any(c in expr for c in '×÷'):
         opindex = next(i for i, c in
                        list(enumerate(expr))[::-1]
-                       if c in binaryoperators)
+                       if c in '×÷')
+        operator = expr[opindex]
+
+        left, right = map(expressionparser, (expr[:opindex], expr[opindex+1:]))
+
+        if operator == '×':
+            return left * right
+        elif operator == '÷':
+            return left / right
+
+    elif any(c in expr for c in '+-'):
+        opindex = next(i for i, c in
+                       list(enumerate(expr))[::-1]
+                       if c in '+-')
         operator = expr[opindex]
 
         left, right = map(expressionparser, (expr[:opindex], expr[opindex+1:]))
