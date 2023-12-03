@@ -2,9 +2,9 @@ def varparser(datatype: str, value: str):
     if datatype == 'β':
         assert value in {'0', '1'}
         return True if value == '1' else False
-    elif datatype == 'Ε':
+    elif datatype == 'ι':
         return int(value)
-    elif datatype == 'ε':
+    elif datatype == 'ζ':
         return float(value)
     else:
         raise 'unknown datatype'

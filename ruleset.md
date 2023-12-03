@@ -2,8 +2,8 @@
 
 - β - Boolean
   - {1 0}
-- Ε - integer
-- ε - float
+- ι - integer
+- ζ - float
 
 ## Variables
 
