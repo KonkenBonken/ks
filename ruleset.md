@@ -39,3 +39,4 @@
 ## Binary Operators
 
 - \+ - Plus
+- \- - Minus
