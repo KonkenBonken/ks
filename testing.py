@@ -11,6 +11,7 @@ def run(script: str, *input: str):
 
 
 def test(script: str, input: 'tuple[str]', expected: str):
+    expected = expected.replace('⏎', '\n')
     output = run(script, *input)
     if output == expected:
         print(script, 'succeeded')
@@ -21,5 +22,5 @@ def test(script: str, input: 'tuple[str]', expected: str):
 
 
 test('let', '', "{'A': True, 'B': 123, 'C': 12.3}")
-test('prompt', ('1', '5'), "A: B: True\n5")
-test('print', '', "5\n3.1\n2\nFalse\n2\nFalse\n2\n5")
+test('prompt', ('1', '5'), "A: B: True⏎5")
+test('print', '', "5⏎3.1⏎2⏎False⏎2⏎False⏎2⏎5")
