@@ -8,7 +8,6 @@ def Let(line: str):
     varname = line[2]
     value = line[3:]
 
-    assert datatype in datatypes
     assert varname in varnames
 
     variables[varname] = varparser(datatype, value)
