@@ -15,4 +15,10 @@
 
   - ∃[datatype][var][…value]
 
+- ω - Prompt
+
+  - ω[datatype][var]
+  - ω[datatype][var][datatype][var]
+  - ω[…[datatype][var]]
+
 - Ω - Vardump

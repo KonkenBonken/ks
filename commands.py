@@ -13,11 +13,21 @@ def Let(line: str):
     variables[varname] = varparser(datatype, value)
 
 
+def Prompt(line: str):
+    for i in range(1, len(line), 2):
+        datatype = line[i]
+        varname = line[i+1]
+
+        value = input(varname + ': ')
+        Let(f'∃{datatype}{varname}{value}')
+
+
 def Vardump(_):
     print(variables)
 
 
 commands = {
     '∃': Let,
-    'Ω':Vardump,
+    'ω': Prompt,
+    'Ω': Vardump,
 }
