@@ -14,3 +14,5 @@
 - ∃ - Let
 
   - ∃[datatype][var][…value]
+
+- Ω - Vardump

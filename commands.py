@@ -16,8 +16,13 @@ def Let(line: str):
         variables[varname] = int(value)
     elif datatype == 'ε':
         variables[varname] = float(value)
+        
+
+def Vardump(_):
+    print(variables)
 
 
 commands = {
-    '∃': Let
+    '∃': Let,
+    'Ω':Vardump,
 }

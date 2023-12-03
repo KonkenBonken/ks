@@ -11,6 +11,3 @@ for line in code.split('\n'):
         continue
     command = commands.get(line[0])
     command(line)
-
-
-print(variables)
