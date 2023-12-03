@@ -10,4 +10,4 @@ for line in code.replace('⋮', '\n').split('\n'):
     if len(line) == 0:
         continue
     command = commands.get(line[0])
-    command(line)
+    command(line.split()[0])
