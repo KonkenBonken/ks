@@ -22,6 +22,11 @@ def Prompt(line: str):
         Let(f'∃{datatype}{varname}{value}')
 
 
+def Print(line: str):
+    for varname in line[1:]:
+        print(variables[varname])
+
+
 def Vardump(_):
     print(variables)
 
@@ -29,5 +34,6 @@ def Vardump(_):
 commands = {
     '∃': Let,
     'ω': Prompt,
+    'Ψ': Print,
     'Ω': Vardump,
 }

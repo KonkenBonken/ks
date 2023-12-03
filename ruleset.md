@@ -21,4 +21,9 @@
   - ω[datatype][var][datatype][var]
   - ω[…[datatype][var]]
 
+- Ψ - Print
+
+  - Ψ[var]
+  - Ψ[…[var]]
+
 - Ω - Vardump
