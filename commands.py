@@ -1,15 +1,16 @@
 from parsers import varparser
+from charsets import varnames, datatypes
 
-varnames = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 variables = dict()
-
 
 def Let(line: str):
     datatype = line[1]
     varname = line[2]
     value = line[3:]
 
+    assert datatype in datatypes
     assert varname in varnames
+
     variables[varname] = varparser(datatype, value)
 
 
