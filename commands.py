@@ -24,8 +24,12 @@ def Prompt(line: str):
 
 
 def Print(line: str):
-    for varname in line[1:]:
-        print(variables[varname])
+    for i in range(1, len(line)):
+        if line[i] in varnames:
+            print(variables[line[i]])
+        elif line[i] in datatypes:
+            print(varparser(line[i], line[i+1:]))
+            break
 
 
 def Vardump(_):
