@@ -35,3 +35,7 @@
 - ⋮ - Newline
 
 - \- Comment
+
+## Binary Operators
+
+- \+ - Plus

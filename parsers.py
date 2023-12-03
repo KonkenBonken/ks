@@ -1,4 +1,6 @@
-from charsets import varnames, datatypes
+from re import split
+from charsets import varnames, datatypes, binaryoperators
+from variables import variables
 
 def varparser(datatype: str, value: str):
     assert datatype in datatypes
@@ -12,3 +14,20 @@ def varparser(datatype: str, value: str):
         return float(value)
     else:
         raise 'unknown datatype'
+
+
+def expressionparser(expr: str):
+    if expr in varnames:
+        return variables[expr]
+
+    if any(op in expr for op in binaryoperators):
+        opindex = min(expr.find(op) for op in binaryoperators if op in expr)
+        operator = expr[opindex]
+
+        left, right = map(expressionparser, (expr[:opindex], expr[opindex+1:]))
+
+        if operator == '+':
+           return left + right
+
+    elif expr[0] in datatypes:
+        return varparser(expr[0], expr[1:])

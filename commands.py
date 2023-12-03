@@ -1,7 +1,6 @@
-from parsers import varparser
+from parsers import expressionparser
 from charsets import varnames, datatypes
-
-variables = dict()
+from variables import variables
 
 def Let(line: str):
     datatype = line[1]
@@ -10,7 +9,7 @@ def Let(line: str):
 
     assert varname in varnames
 
-    variables[varname] = varparser(datatype, value)
+    variables[varname] = expressionparser(datatype + value)
 
 
 def Prompt(line: str):
@@ -27,7 +26,7 @@ def Print(line: str):
         if line[i] in varnames:
             print(variables[line[i]])
         elif line[i] in datatypes:
-            print(varparser(line[i], line[i+1:]))
+            print(expressionparser(line[i:]))
             break
 
 

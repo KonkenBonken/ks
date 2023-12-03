@@ -24,3 +24,4 @@ def test(script: str, input: 'tuple[str]', expected: str):
 test('let', '', "{'A': True, 'B': 123, 'C': 12.3}")
 test('prompt', ('1', '5'), "A: B: True⏎5")
 test('print', '', "5⏎3.1⏎2⏎False⏎2⏎False⏎2⏎5")
+test('operations', '', "5⏎8⏎8.2⏎10.2")
