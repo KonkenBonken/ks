@@ -42,3 +42,4 @@
 - \- - Minus
 - × - Multiply
 - ÷ - Divide
+- ^ - Exponent

@@ -21,7 +21,7 @@ def expressionparser(expr: str):
     if expr in varnames:
         return variables[expr]
 
-    for operators in ('+-', '×÷'):
+    for operators in ('+-', '×÷', '^'):
         if any(c in expr for c in operators):
             opindex = next(i for i, c in
                            list(enumerate(expr))[::-1]
@@ -31,7 +31,9 @@ def expressionparser(expr: str):
             left, right = map(expressionparser,
                               (expr[:opindex], expr[opindex+1:]))
 
-            if operator == '×':
+            if operator == '^':
+                return left ** right
+            elif operator == '×':
                 return left * right
             elif operator == '÷':
                 return float(left / right)
