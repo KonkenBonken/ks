@@ -34,7 +34,7 @@ def expressionparser(expr: str):
             if operator == '×':
                 return left * right
             elif operator == '÷':
-                return left / right
+                return float(left / right)
             elif operator == '+':
                 return left + right
             elif operator == '-':
