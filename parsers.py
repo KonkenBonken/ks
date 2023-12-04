@@ -21,7 +21,7 @@ def expressionparser(expr: str):
     if expr in varnames:
         return variables[expr]
 
-    for operators in ('×÷', '+-'):
+    for operators in ('+-', '×÷'):
         if any(c in expr for c in operators):
             opindex = next(i for i, c in
                            list(enumerate(expr))[::-1]
