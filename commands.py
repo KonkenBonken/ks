@@ -34,9 +34,14 @@ def Vardump(_):
     print(variables)
 
 
+def Goto(line:str):
+    return expressionparser(line[1:])
+    
+
 commands = {
     '∃': Let,
     'ω': Prompt,
     'Ψ': Print,
     'Ω': Vardump,
+    'Δ': Goto
 }

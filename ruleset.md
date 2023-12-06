@@ -30,6 +30,9 @@
 
 - Ω - Vardump
 
+- Δ - Goto
+  - Δ[line count]
+
 ## Keywords
 
 - ⋮ - Newline
