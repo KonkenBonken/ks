@@ -26,5 +26,8 @@ while i < len(lines):
         command = commands.get(line[0])
         res = command(line.split()[0])
 
-        if isinstance(res, (int, float)):
+        if line[0] == 'Δ':
             i += int(res)-1
+        elif line[0] == '∴':
+            if not res:
+                break

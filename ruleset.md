@@ -28,6 +28,10 @@
   - Ψ[datatype][…value]
   - Ψ[…[var]][datatype][…value]
 
+- ∴ - IF
+
+  - ∴[expression]⋮[command]
+
 - Ω - Vardump
 
 - Δ - Goto
