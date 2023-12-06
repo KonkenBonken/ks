@@ -1,5 +1,4 @@
-from re import split
-from charsets import varnames, datatypes, binaryoperators
+from charsets import varnames, datatypes
 from variables import variables
 
 
@@ -20,6 +19,8 @@ def varparser(datatype: str, value: str):
 def expressionparser(expr: str):
     if expr in varnames:
         return variables[expr]
+    if expr[0] in datatypes and expr[1:] in varnames:
+        return variables[expr[1]]
 
     for operators in ('+-', '×÷', '^'):
         if any(c in expr for c in operators):
