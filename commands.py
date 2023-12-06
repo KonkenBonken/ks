@@ -2,6 +2,7 @@ from parsers import expressionparser
 from charsets import commandset, varnames, datatypes
 from variables import variables
 
+
 def Let(line: str):
     datatype = line[1]
     varname = line[2]
@@ -30,13 +31,14 @@ def Print(line: str):
             break
 
 
-def Vardump(_):
-    print(variables)
+def Vardump(line: str):
+    assert len(line) == 1
+    print(', '.join(f'{var}: {val}' for var, val in variables.items()))
 
 
-def Goto(line:str):
+def Goto(line: str):
     return expressionparser(line[1:])
-    
+
 
 commands = {
     '∃': Let,
