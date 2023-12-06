@@ -1,5 +1,5 @@
 from parsers import expressionparser
-from charsets import varnames, datatypes
+from charsets import commandset, varnames, datatypes
 from variables import variables
 
 def Let(line: str):
@@ -45,3 +45,5 @@ commands = {
     'Ω': Vardump,
     'Δ': Goto
 }
+
+assert all(c in commands for c in commandset)
