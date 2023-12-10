@@ -12,6 +12,8 @@ def varparser(datatype: str, value: str):
         return int(value)
     elif datatype == 'ζ':
         return float(value)
+    elif datatype == '¶':
+        return str(value)
     else:
         raise 'unknown datatype'
 

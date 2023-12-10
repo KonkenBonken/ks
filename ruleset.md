@@ -1,9 +1,10 @@
 ## Datatypes
 
-- β - Boolean
+- β - boolean
   - {1 0}
 - ι - integer
 - ζ - float
+- ¶ - string
 
 ## Variables
 

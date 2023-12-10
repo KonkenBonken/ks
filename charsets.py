@@ -1,4 +1,4 @@
 varnames = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
 commandset = set('∃ωΨΩΔ∴')
-datatypes = set('βιζ')
+datatypes = set('βιζ¶')
 binaryoperators = set('+-×÷^')
