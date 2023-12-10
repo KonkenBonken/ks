@@ -1,4 +1,4 @@
-from charsets import varnames, datatypes
+from charsets import varnames, strchars, datatypes
 from variables import variables
 
 
@@ -23,6 +23,20 @@ def expressionparser(expr: str):
         return variables[expr]
     if expr[0] in datatypes and expr[1:] in varnames:
         return variables[expr[1]]
+
+    if expr[0] == '¶':
+        res,  work = [],  ''
+        for c in expr[1:]:
+            if c in strchars:
+                if work:
+                    res.append(expressionparser(work))
+                    work = ''
+                res.append(c)
+            else:
+                work += c
+        if work:
+            res.append(expressionparser(work))
+        return ''.join(res)
 
     for operators in ('+-', '×÷', '^'):
         if any(c in expr for c in operators):

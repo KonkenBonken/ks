@@ -1,4 +1,5 @@
 varnames = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+strchars = set('abcdefghijklmnopqrstuvwxyz')
 commandset = set('∃ωΨΩΔ∴')
 datatypes = set('βιζ¶')
 binaryoperators = set('+-×÷^')
